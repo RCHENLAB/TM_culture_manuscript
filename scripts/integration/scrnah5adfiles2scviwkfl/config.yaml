@@ -1,0 +1,49 @@
+scrnah5adsubsetbyvaluecounts:
+  condaenv: null
+  label: sampleid
+  ncell: 10
+scrnascvih5ad:
+  condaenv: null
+  batchkey: sampleid
+  nlayer: 2
+  nlatent: 30
+  ntop: 10000
+  flavor: seurat
+  seed: 12345
+  epoch: null
+  gpu: null
+  normcounts: false
+scrnascanpycombinerawcountsscvi:
+  condaenv: null
+  obs:
+  - _scvi_batch
+  - _scvi_labels
+  - _scvi_local_l_mean
+  - _scvi_local_l_var
+  invert: true
+scrnah5ad2normscale:
+  condaenv: null
+  scale: false
+scrnah5adumapby:
+  condaenv: null
+  width: 5
+  height: 5
+  notitle: true
+  label:
+  - G2M.Score
+  - Phase
+  - S.Score
+  - disease
+  - nCount_RNA
+  - nCount_SCT
+  - nFeature_RNA
+  - nFeature_SCT
+  - passage
+  - percent.mito
+  - percent.mt
+  - sampleid
+  - scpred_prediction
+  - seurat_clusters
+  - side
+  - subset
+  - leiden
