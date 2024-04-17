@@ -1,0 +1,4 @@
+sampleid	disease	side	passage	sampletype	filepath
+22_0500_TM	healthy	unknown	tissue	tissue	/storage/chentemp/alice/TM_project/scrnah5adbarcodeaddprefix/obj_query_predicted_umap_22_0500_TM.h5ad
+22_0688_TM	healthy	unknown	tissue	tissue	/storage/chentemp/alice/TM_project/scrnah5adbarcodeaddprefix/obj_query_predicted_umap_22_0688_TM.h5ad
+22_0769_TM	healthy	unknown	tissue	tissue	/storage/chentemp/alice/TM_project/scrnah5adbarcodeaddprefix/obj_query_predicted_umap_22_0769_TM.h5ad

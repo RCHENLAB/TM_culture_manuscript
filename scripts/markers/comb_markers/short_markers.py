@@ -1,0 +1,26 @@
+import scanpy as sc
+import matplotlib.pyplot as plt
+
+def generate_dotplot(h5ad_file, marker_genes, output_file):
+    # Load the AnnData object from the .h5ad file
+    adata = sc.read(h5ad_file)
+
+    # Specify the marker genes for the dot plot
+    marker_genes = marker_genes
+
+    # Create the dot plot
+    sc.pl.dotplot(adata, var_names=marker_genes, groupby='scpred_prediction', color_map='viridis', dot_max=0.7, dendrogram=True, save=output_file)
+
+if __name__ == "__main__":
+    # Replace 'your_file.h5ad' with the path to your .h5ad file
+    h5ad_file_path = '/storage/chentemp/alice/TM_project/tissue/scrnah5adfiles2scviwkfl/TM_culture_wtissue.h5ad'
+
+    # Replace ['gene1', 'gene2', 'gene3'] with your list of important genes
+    #marker_gene_list = ['UCHL1','SCG2','GAP43','MLANA','PMEL','MITF','TRPM1','TYR','MBP','MPZ','PLP1','LGI4','CDH19','CD68','CXCL8','IL1B','TREM2','IL7R','MGARP','ADRB2','SLC2A1','IGFBP2','COL14A1','ADH1B','FBLN2','COL1A2','COL6A1','TNXB','TIMP2','FBLN1','DCN','PCOLCE','PECAM1','VWF','ALPL','CLDN5','TFF3','PLAT','FN1','POSTN','CCL21','CDH5','ANGPTL7','PDPN','CEMIP','MYOC','CYTL1','CHI3L1','NEB','RSPO4','FMOD','NELL2','BMP5','MGP','RARRES1','FABP4','TMEFF2','PPP1R1B','BAMBI','CHRM3','DES','CNN1','MYH11','MYLK','NDUFA4L2','ATP2A1']
+    marker_gene_list = ['COL1A2','FBLN1','DCN','CHRM3','DES','CNN1','COL6A1','FABP4','NDUFA4L2','CLDN5','VWF','PECAM1','CD68','CXCL8','MBP','IL1B','LGI4','CDH19','PLP1','MPZ','MLANA','PMEL','MITF','GAP43','IL7R','KIT']
+
+    # Specify the output file path (e.g., 'dotplot.png')
+    output_file_path = 'comb_markers_shorter_ordered_scpred.png'
+
+    # Generate the dot plot
+    generate_dotplot(h5ad_file_path, marker_gene_list, output_file_path)
